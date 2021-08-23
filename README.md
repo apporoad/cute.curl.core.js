@@ -13,6 +13,17 @@ aok test -p 19999
 node test
 
 
-node bin.js http://localhost:19999/abc  post  'hello world' -H aaa:33 -H bb:3
+```
+
+
+## how to use
+```bash
+npm i -S cute.curl.core
+```
+
+```js
+var ccurl = require('cute.curl.core')
+
+
 
 ```

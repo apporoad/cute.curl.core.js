@@ -13,4 +13,12 @@ var curl = require('./index')
 // })
 
 
-curl.cmd('http://localhost:19999/123' , {ac: 'hello good good day'}, 'post')
+// curl.cmd('http://localhost:19999/123' , {ac: 'hello good good day'}, 'post')
+
+var abc = async ()=>{
+    var data = await curl.cmd('http://localhost:19999/123' , {ac: 'hello good good day'}, 'post' , 's')
+
+    console.log(JSON.stringify(data))
+}
+
+abc()

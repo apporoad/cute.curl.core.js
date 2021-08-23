@@ -187,10 +187,10 @@ exports.invoke = async function(cmds , options){
         return data
     }catch(ex){
         if(!options.slient){
-            console.error(resolveMsg(err))
+            console.error(resolveMsg(ex))
         }else{
             if(options.verbose){
-                console.error(resolveMsg(err))
+                console.error(resolveMsg(ex))
             }
         }
         throw ex
