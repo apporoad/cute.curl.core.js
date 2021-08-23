@@ -167,6 +167,20 @@ exports.invoke = async function(cmds , options){
     handlerOptions.data = data
     
     try{
+        var invokeObj = {
+            url : url,
+            method : method,
+            data : data,
+            options : options
+        }
+        if(options.preInvoke){
+            await options.preInvoke(invokeObj)
+        }
+        url = invokeObj.url
+        method = invokeObj.method
+        data = invokeObj.data
+        options = invokeObj.options
+        
         var data = await req(url, method, data ,options)
         var odata = data
         // console.log(extObject)
