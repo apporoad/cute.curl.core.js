@@ -7,7 +7,7 @@ var curl = require('./index')
 
 
 
-curl.invoke(['http://localhost:19999/123' , 'post' , { abc :'hello', yes : 1} , ''], {
+curl.invoke(['http://localhost:19999/123' ,'put' , { abc :'hello', yes : 1} , ''], {
     headers: ['asdf:a' , 'ccc:222'],
     verbose : false,
     preInvoke : function(invokeObj){
@@ -16,16 +16,17 @@ curl.invoke(['http://localhost:19999/123' , 'post' , { abc :'hello', yes : 1} , 
         console.log(invokeObj.method)
         console.log(invokeObj.options)
         invokeObj.data['abc'] = 'yyyyyy'
-    }
+    },defaultMethod : 'post',
+    method : 'get'
 })
 
 
 // curl.cmd('http://localhost:19999/123' , {ac: 'hello good good day'}, 'post')
 
-var abc = async ()=>{
-    var data = await curl.cmd('http://localhost:19999/123' , {ac: 'hello good good day'}, 'post' , 's')
+// var abc = async ()=>{
+//     var data = await curl.cmd('http://localhost:19999/123' , {ac: 'hello good good day'}, 'post' , 's')
 
-    console.log(JSON.stringify(data))
-}
+//     console.log(JSON.stringify(data))
+// }
 
 // abc()

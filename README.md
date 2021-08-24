@@ -33,6 +33,10 @@ var ccurl = require('cute.curl.core')
 curl.invoke(['http://localhost:19999/123' , 'post' , { abc :'hello', yes : 1} , ''], {
     headers: ['asdf:a' , 'ccc:222'],
     verbose : false,
+    //defaultMethod ， useful when no method
+    defaultMethod : 'post',
+    // force method 
+    method : 'get',
     preInvoke : function(invokeObj){
         console.log(invokeObj.url)
         console.log(invokeObj.data)

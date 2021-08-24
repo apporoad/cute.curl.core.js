@@ -91,7 +91,7 @@ exports.invoke = async function(cmds , options){
 
     var handlerOptions = Object.assign({}, options)
     var url = null
-    var method = options.defautMethod  || 'get'
+    var method = options.defaultMethod  || 'get'
     var data = null
 
     cmds.forEach(oneStr => {
