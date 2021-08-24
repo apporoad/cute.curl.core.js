@@ -91,7 +91,7 @@ exports.invoke = async function(cmds , options){
 
     var handlerOptions = Object.assign({}, options)
     var url = null
-    var method = 'get'
+    var method = options.defautMethod  || 'get'
     var data = null
 
     cmds.forEach(oneStr => {
@@ -150,6 +150,8 @@ exports.invoke = async function(cmds , options){
                 break
         }
     });
+
+    method = options.method || method
 
     if(!url){
         console.error('you must give a : url')
